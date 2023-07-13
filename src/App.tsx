@@ -1,13 +1,14 @@
 import { useState } from 'react'
 import './App.css'
 import './styles/main.scss'
-import { Card } from 'react-bootstrap'
+import { RecoilRoot } from 'recoil'
+import { Card } from '@mui/material'
 
 function App() {
    const [count, setCount] = useState(0)
 
    return (
-      <>
+      <RecoilRoot>
          <Card>
             <h1>Vite + React Boilerplate</h1>
             <div>
@@ -23,7 +24,7 @@ function App() {
             </div>
             <p className="read-the-docs">Click on the Vite and React logos to learn more</p>
          </Card>
-      </>
+      </RecoilRoot>
    )
 }
 
