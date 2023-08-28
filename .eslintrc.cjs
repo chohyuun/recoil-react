@@ -22,5 +22,6 @@ module.exports = {
       '@typescript-eslint/explicit-function-return-type': 'off', // function return type 제어
       '@typescript-eslint/space-before-function-paren': 'off',
       '@typescript-eslint/no-non-null-assertion': 'off',
+      '@typescript-eslint/no-floating-promises': 'off'
    },
 }

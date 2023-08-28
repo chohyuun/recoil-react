@@ -1,0 +1,17 @@
+.yarn
+node_modules
+*.woff
+*.ttf
+.idea
+/dist
+/_dist
+/public
+/docs
+.husky
+.local
+/bin
+.pnp.cjs
+.pnp.loader.mjs
+.yarnrc.yml
+*.js
+*.config.ts
