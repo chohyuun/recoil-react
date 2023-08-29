@@ -1,0 +1,29 @@
+// Mui style
+
+.MuiCardHeader-title{
+  height: 45px;
+  font-size: 16px !important;
+  display: -webkit-box !important;
+  text-overflow: ellipsis;
+  word-wrap: break-word;
+  overflow: hidden;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+
+.MuiCard-root {
+  border-radius: 8px !important;
+}
+
+.MuiCardHeader-root {
+  height: 65px;
+  align-items: start !important;
+}
+
+.MuiCardHeader-subheader {
+  text-align: end;
+}
+
+.MuiGrid-root{
+  justify-content: center;
+}

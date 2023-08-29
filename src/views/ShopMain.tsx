@@ -1,13 +1,15 @@
 import { useMount, useUpdateEffect } from 'react-use'
 import { type GetNaverShopRequest } from '../server/api/shop.ts'
-import { Container } from '@mui/material'
+import { Container, Grid } from '@mui/material'
 import { useRecoilValue, useSetRecoilState } from 'recoil'
 import { getShopAtomResponse } from '../recoil/getShop.ts'
 import axios from 'axios'
+import ItemsCard from './product/ItemsCard.tsx'
 
 const ShopMain = () => {
    const setShopRecoil = useSetRecoilState(getShopAtomResponse)
    const getShopItem = useRecoilValue(getShopAtomResponse)
+   const productItems = getShopItem.items
 
    const GetNaverShop = async (request: GetNaverShopRequest) => {
       try {
@@ -38,8 +40,16 @@ const ShopMain = () => {
 
    return (
       <>
-         <Container>
-            <div>{getShopItem.items.map((value) => value.brand)}</div>
+         <Container maxWidth="lg">
+            <Grid container rowSpacing={2}>
+               {productItems.map((item, index) => {
+                  return (
+                     <Grid item md={4} sm={6} xs={12} key={index}>
+                        <ItemsCard productItems={item} />
+                     </Grid>
+                  )
+               })}
+            </Grid>
          </Container>
       </>
    )

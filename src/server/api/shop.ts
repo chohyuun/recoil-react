@@ -17,7 +17,7 @@ export interface BaseShopResponse {
    display: number
 }
 
-export interface ShopNaverShopItems {
+export interface NaverShopItems {
    title: string
    link: string
    image: string
@@ -44,5 +44,5 @@ export interface GetNaverShopRequest {
 }
 
 export interface GetNaverShopResponse extends BaseShopResponse {
-   items: ShopNaverShopItems[]
+   items: NaverShopItems[]
 }
