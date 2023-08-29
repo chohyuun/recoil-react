@@ -24,6 +24,13 @@ export default Footer
 
 const FooterContent = styled.div`
    color: #848484;
-   padding: 20px 15px 5px;
+   // linear-gradient : 그라데이션 설정 (색상 00%: 00%까지 지정한 색상 표시)
+   background: linear-gradient(
+      rgba(255, 255, 255, 0) 5%,
+      rgba(255, 255, 255, 0.5) 40%,
+      rgba(255, 255, 255) 100%
+   );
+   height: 50px;
+   padding: 15px 15px 5px;
    font-size: 12px;
 `

@@ -1,5 +1,6 @@
 
 section {
+  display: flex;
   position: relative;
   width: 100vw;
 }
@@ -35,6 +36,8 @@ header {
   width: 100%;
   color: #000;
   z-index: 999;
+  height: 54px;
+  background: #fff;
 }
 
 footer {
@@ -42,6 +45,7 @@ footer {
   bottom: 0;
   left: 0;
   right: 0;
+  z-index: 999;
 
   *{
     color : #848484;

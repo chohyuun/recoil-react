@@ -1,12 +1,4 @@
-import {
-   Card,
-   CardContent,
-   CardHeader,
-   CardMedia,
-   Container,
-   Grid,
-   Typography,
-} from '@mui/material'
+import { Card, CardContent, CardHeader, CardMedia, Container } from '@mui/material'
 import { type NaverShopItems } from '../../server/api/shop.ts'
 import { useNavigate } from 'react-router-dom'
 import styled from 'styled-components'
