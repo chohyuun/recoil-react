@@ -16,12 +16,16 @@
 }
 
 .MuiCardHeader-root {
-  height: 65px;
+  height: 80px;
   align-items: start !important;
 }
 
 .MuiCardHeader-subheader {
   text-align: end;
+
+  * {
+    line-height: 1rem;
+  }
 }
 
 .MuiGrid-root{

@@ -1,4 +1,4 @@
-import { useMount, useUpdateEffect } from 'react-use'
+import { useMount } from 'react-use'
 import { type GetNaverShopRequest } from '../server/api/shop.ts'
 import { Container, Grid } from '@mui/material'
 import { useRecoilValue, useSetRecoilState } from 'recoil'
@@ -6,6 +6,9 @@ import { getShopAtomResponse } from '../recoil/getShop.ts'
 import axios from 'axios'
 import ItemsCard from './product/ItemsCard.tsx'
 
+// todo: 필터 추가 (키워드 검색, 노출 개수, 정렬, 제외 항목 등)
+// todo: cross platform 확인
+// todo: cross browsing 개선
 const ShopMain = () => {
    const setShopRecoil = useSetRecoilState(getShopAtomResponse)
    const getShopItem = useRecoilValue(getShopAtomResponse)
@@ -27,8 +30,8 @@ const ShopMain = () => {
                const data = response.data
                setShopRecoil(data)
             })
-      } catch {
-         console.log('error')
+      } catch (error) {
+         console.log(error)
       }
    }
 
@@ -36,19 +39,19 @@ const ShopMain = () => {
       GetNaverShop({ query: '수영복' })
    })
 
-   useUpdateEffect(() => {}, [getShopItem])
-
    return (
       <>
          <Container maxWidth="lg">
             <Grid container rowSpacing={2}>
-               {productItems.map((item, index) => {
-                  return (
-                     <Grid item md={4} sm={6} xs={12} key={index}>
-                        <ItemsCard productItems={item} />
-                     </Grid>
-                  )
-               })}
+               {productItems.length > 0 &&
+                  productItems.map((item, index) => {
+                     return (
+                        // todo: key값 최적의 방법 찾아보기
+                        <Grid item md={4} sm={6} xs={12} key={item.productId}>
+                           <ItemsCard index={index} />
+                        </Grid>
+                     )
+                  })}
             </Grid>
          </Container>
       </>
