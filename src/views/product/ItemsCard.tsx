@@ -4,6 +4,7 @@ import { useState } from 'react'
 import { useMount } from 'react-use'
 import { useRecoilValue } from 'recoil'
 import { getShopAtomResponse } from '../../recoil/getShop.ts'
+import { NumberFormat } from '../../util/NumberFormat.ts'
 
 // todo: item 내용 추가
 const ItemsCard = ({ index }: { index: number }) => {
@@ -60,7 +61,7 @@ const ItemsCard = ({ index }: { index: number }) => {
                   />
                </CardMediaStyle>
                <CardContent>
-                  <div>가격 : {productItem.lprice}</div>
+                  <div>가격 : {NumberFormat(productItem.lprice)}</div>
                </CardContent>
             </Card>
          </Container>
